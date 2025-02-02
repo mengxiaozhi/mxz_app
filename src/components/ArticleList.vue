@@ -1,6 +1,6 @@
 <script setup>
     import { ref, onMounted, watch } from "vue";
-    import { NCard, NTag, NButton, NSpin, useMessage, NIcon, NPagination, NDivider } from "naive-ui";
+    import {  NSpin, useMessage, NIcon, NPagination, NDivider } from "naive-ui";
     import { ArrowForward } from '@vicons/ionicons5'
 
     const articles = ref([]);
@@ -28,7 +28,6 @@
                 id: article.id,
                 title: article.title,
                 link: article.link,
-                imageUrl: article.imageUrl,
                 excerpt: article.excerpt
             });
             localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
@@ -108,7 +107,7 @@
                     </div>
                     &nbsp;
                     <div>
-                        <a :href="article.link" target="_self">
+                        <!--<a :href="article.link" target="_self">
                             <Button
                                 class="border-1 bg-md-primary/100 text-md-on-primary py-2 px-5 rounded-full hover:bg-md-primary/0 hover:text-md-primary hover:border-1 hover: border-md-primary">
                                 <n-icon class="pt-0.5 pr-5">
@@ -116,7 +115,16 @@
                                 </n-icon>
                                 閱讀更多
                             </Button>
-                        </a>
+                        </a>-->
+                        <router-link :to="`/reader?id=${article.id}`">
+                            <Button
+                                class="border-1 bg-md-primary/100 text-md-on-primary py-2 px-5 rounded-full hover:bg-md-primary/0 hover:text-md-primary hover:border-1 hover: border-md-primary">
+                                <n-icon class="pt-0.5 pr-5">
+                                    <ArrowForward />
+                                </n-icon>
+                                閱讀更多
+                            </Button>
+                        </router-link>
                         <Button class=" text-md-primary py-2 px-5" @click="addBookmark(article)">
                             加入書籤
                         </Button>

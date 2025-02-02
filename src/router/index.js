@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
     { name: '我的文章', path: '/', component: () => import('../page/home.vue') },
     { name: '書籤', path: '/bookmark', component: () => import('../page/bookmark.vue') },
+    { name: '閱讀', path: '/reader', component: () => import('../page/reader.vue') },
     { name: '更多', path: '/more', component: () => import('../page/more.vue') },
     { name: 'NotFound', path: '/404', component: () => import('../page/404.vue') },
     { path: '/:pathMatch(.*)*', redirect: '/404' }
