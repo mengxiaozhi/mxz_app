@@ -30,4 +30,11 @@
     </n-config-provider>
 </template>
 
-<style scoped></style>
+<style>
+mark {
+        color: var(--textColor);
+        background: none;
+        box-shadow: inset 0 -0.6em rgb(255 255 000 / 80%);
+        padding: 0 0.1em;
+    }
+</style>

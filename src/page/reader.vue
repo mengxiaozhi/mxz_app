@@ -89,7 +89,7 @@
                 const shareData = {
                     title: '萌小志Mengxiaozhi Blog',
                     text: '分享一篇文章',
-                    url: article?.link,
+                    url: article.value.link,
                 };
 
                 // 判断是否支持 Web Share API
@@ -124,7 +124,7 @@
 
 <style scoped>
     .content {
-        white-space: pre-line;
+        /*white-space: pre-line;*/
         /* 保留换行符 */
     }
 </style>
