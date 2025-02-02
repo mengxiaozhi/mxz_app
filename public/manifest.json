@@ -1,0 +1,25 @@
+{
+  "name": "萌小志Mengxiaozhi",
+  "short_name": "萌小志",
+  "start_url": "/",
+  "display": "standalone",
+  "description": "萌小志Mengxiaozhi Blog的行動App",
+  "theme_color": "#F6FBF4",
+  "background_color": "#F6FBF4",
+  "orientation": "portrait",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=app.xiaozhi.moe",
+      "id": "app.xiaozhi.moe"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
