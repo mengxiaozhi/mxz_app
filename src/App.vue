@@ -1,6 +1,6 @@
 <script setup>
     import { NConfigProvider, NMessageProvider } from 'naive-ui'
-    import Nav from './components/nav.vue'
+    import Nav from './components/Nav.vue'
     import Vue_Header from './components/Header.vue'
 
     const lightThemeOverrides = {
