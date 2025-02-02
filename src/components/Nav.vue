@@ -1,8 +1,30 @@
 <script setup>
-import { NIcon, NButton } from 'naive-ui'
+import { ref,onMounted } from 'vue'
+import { NIcon } from 'naive-ui'
 import { Home, Search, Menu } from '@vicons/ionicons5'
 import { useRouter, useRoute } from 'vue-router'
 
+// 建立一個 isIphonePWA 的狀態
+const isIphonePWA = ref(false)
+
+// 檢查是否為 iOS PWA 的函式
+function checkIfIphonePWA() {
+  const userAgent = window.navigator.userAgent.toLowerCase()
+  const isIos = /iphone|ipad|ipod/.test(userAgent)
+  const isInStandaloneMode =
+    'standalone' in window.navigator && window.navigator.standalone
+
+  if (isIos && isInStandaloneMode) {
+    isIphonePWA.value = true
+  }
+}
+
+// 在 onMounted 生命週期中呼叫這個檢查函式
+onMounted(() => {
+  checkIfIphonePWA()
+})
+
+//路由
 const router = useRouter()
 const route = useRoute()
 
@@ -14,10 +36,11 @@ const navigateTo = (path) => {
 const isActive = (path) => {
   return route.path === path
 }
+
 </script>
 
 <template>
-  <nav class="fixed bottom-0 left-0 right-0 bg-md-surface-container">
+  <nav :class="['fixed bottom-0 left-0 right-0 bg-md-surface-container',{ 'pb-5': isIphonePWA }]">
     <div class="flex justify-around items-center h-16">
       <!-- 首頁按鈕 -->
       <button
@@ -37,7 +60,7 @@ const isActive = (path) => {
               : 'hover:bg-md-on-surface/12'
           ]"
         >
-          <NIcon>
+          <NIcon size="24px">
             <Home />
           </NIcon>
         </div>
@@ -92,7 +115,7 @@ const isActive = (path) => {
               : 'hover:bg-md-on-surface/12'
           ]"
         >
-          <NIcon>
+          <NIcon size="24px">
             <Menu />
           </NIcon>
         </div>
