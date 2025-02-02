@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+body{
+    background-color: #F6FBF4;
+}
+
+/* 在你的主 CSS 檔案中，如 tailwind.css 或 main.css */
+@theme {
+    /* 你已經定義的部分 */
+    --color-md-surface-container: #EAEFE9;
+    --color-md-secondary-container: #D0E8D7;
+    --color-md-on-secondary-container: #0B1F15;
+
+    /* 以下依照「light」scheme，其餘色票繼續往下寫 */
+    --color-md-primary: #276A49;
+    --color-md-on-primary: #FFFFFF;
+    --color-md-primary-container: #ACF2C8;
+    --color-md-on-primary-container: #002112;
+
+    --color-md-secondary: #4E6355;
+    --color-md-on-secondary: #FFFFFF;
+    /* secondaryContainer 已在上方聲明 */
+    /* onSecondaryContainer 已在上方聲明 */
+
+    --color-md-tertiary: #3C6471;
+    --color-md-on-tertiary: #FFFFFF;
+    --color-md-tertiary-container: #BFE9F9;
+    --color-md-on-tertiary-container: #001F27;
+
+    --color-md-error: #BA1A1A;
+    --color-md-on-error: #FFFFFF;
+    --color-md-error-container: #FFDAD6;
+    --color-md-on-error-container: #410002;
+
+    --color-md-background: #F6FBF4;
+    --color-md-on-background: #171D19;
+
+    --color-md-surface: #F6FBF4;
+    --color-md-on-surface: #171D19;
+    --color-md-surface-variant: #DCE5DC;
+    --color-md-on-surface-variant: #404942;
+
+    --color-md-outline: #707972;
+    --color-md-outline-variant: #C0C9C0;
+    --color-md-shadow: #000000;
+    --color-md-scrim: #000000;
+    --color-md-inverse-surface: #2C322D;
+    --color-md-inverse-on-surface: #EDF2EB;
+    --color-md-inverse-primary: #91D5AD;
+
+    --color-md-primary-fixed: #ACF2C8;
+    --color-md-on-primary-fixed: #002112;
+    --color-md-primary-fixed-dim: #91D5AD;
+    --color-md-on-primary-fixed-variant: #045233;
+
+    --color-md-secondary-fixed: #D0E8D7;
+    /* 跟上面 secondaryContainer 相同 */
+    --color-md-on-secondary-fixed: #0B1F15;
+    --color-md-secondary-fixed-dim: #B5CCBB;
+    --color-md-on-secondary-fixed-variant: #374B3E;
+
+    --color-md-tertiary-fixed: #BFE9F9;
+    --color-md-on-tertiary-fixed: #001F27;
+    --color-md-tertiary-fixed-dim: #A4CDDC;
+    --color-md-on-tertiary-fixed-variant: #224C59;
+
+    --color-md-surface-dim: #D6DBD5;
+    --color-md-surface-bright: #F6FBF4;
+    --color-md-surface-container-lowest: #FFFFFF;
+    --color-md-surface-container-low: #F0F5EE;
+    /* --color-md-surface-container 已在最上方定義 */
+    --color-md-surface-container-high: #E4EAE3;
+    --color-md-surface-container-highest: #DFE4DD;
+}
