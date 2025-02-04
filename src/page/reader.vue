@@ -10,20 +10,20 @@
 
             <!-- Article Content -->
             <div class="px-4">
-                <h1 class="text-2xl font-bold mb-2">{{ article?.title }}</h1>
-                <div class="flex justify-between items-center mb-4 text-sm text-gray-600">
+                <h1 class="text-2xl font-bold mb-2 text-md-on-surface dark:text-dark-md-on-surface">{{ article?.title }}</h1>
+                <div class="flex justify-between items-center mb-4 text-sm text-md-on-surface dark:text-dark-md-on-surface">
                     <span>
                         {{ article?.author }} · {{ article?.date }}
                     </span>
-                    <a :href="article?.link" class=" text-md-primary py-2 px-5xs">
+                    <a :href="article?.link" class=" text-md-primary dark:text-dark-md-primary py-2 px-5xs">
                         原始頁面
                     </a>
                 </div>
                 <!-- Content Section -->
-                <div v-html="article?.content" class="mb-4"></div>
+                <div v-html="article?.content" class="content text-md-on-surface-variant dark:text-dark-md-on-surface-variant"></div>
 
                 <Button @click="handleShare"
-                    class="border-1 bg-md-primary/100 text-md-on-primary py-2 px-5 rounded-full hover:bg-md-primary/0 hover:text-md-primary hover:border-1 hover: border-md-primary">
+                    class="border-1 bg-md-primary/100 text-md-on-primary py-2 px-5 rounded-full hover:bg-md-primary/0 dark:bg-dark-md-primary/100 text-dark-md-on-primary hover:text-md-primary hover:border-1 hover: border-md-primary dark:hover:text-dark-md-primary">
                     <n-icon class="pt-0.5 pr-5">
                         <ShareOutline />
                     </n-icon>
@@ -124,7 +124,6 @@
 
 <style scoped>
     .content {
-        /*white-space: pre-line;*/
-        /* 保留换行符 */
+        color: aliceblue;
     }
 </style>

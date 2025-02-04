@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
-body{
+body {
     background-color: #F6FBF4;
 }
 
-/* 在你的主 CSS 檔案中，如 tailwind.css 或 main.css */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0F1511;
+    }
+
+}
+
+/* light配色 */
 @theme {
     /* 你已經定義的部分 */
     --color-md-surface-container: #EAEFE9;
@@ -71,4 +78,65 @@ body{
     /* --color-md-surface-container 已在最上方定義 */
     --color-md-surface-container-high: #E4EAE3;
     --color-md-surface-container-highest: #DFE4DD;
+
+    /*dark mode*/
+    --color-dark-md-primary: #91D5AD;
+    --color-dark-md-on-primary: #003821;
+    --color-dark-md-primary-container: #045233;
+    --color-dark-md-on-primary-container: #ACF2C8;
+
+    --color-dark-md-secondary: #B5CCBB;
+    --color-dark-md-on-secondary: #203529;
+    --color-dark-md-secondary-container: #374B3E;
+    --color-dark-md-on-secondary-container: #D0E8D7;
+
+    --color-dark-md-tertiary: #A4CDDC;
+    --color-dark-md-on-tertiary: #043542;
+    --color-dark-md-tertiary-container: #224C59;
+    --color-dark-md-on-tertiary-container: #BFE9F9;
+
+    --color-dark-md-error: #FFB4AB;
+    --color-dark-md-on-error: #690005;
+    --color-dark-md-error-container: #93000A;
+    --color-dark-md-on-error-container: #FFDAD6;
+
+    --color-dark-md-background: #0F1511;
+    --color-dark-md-on-background: #DFE4DD;
+
+    --color-dark-md-surface: #0F1511;
+    --color-dark-md-on-surface: #DFE4DD;
+    --color-dark-md-surface-variant: #404942;
+    --color-dark-md-on-surface-variant: #C0C9C0;
+
+    --color-dark-md-outline: #8A938B;
+    --color-dark-md-outline-variant: #404942;
+    --color-dark-md-shadow: #000000;
+    --color-dark-md-scrim: #000000;
+
+    --color-dark-md-inverse-surface: #DFE4DD;
+    --color-dark-md-inverse-on-surface: #2C322D;
+    --color-dark-md-inverse-primary: #276A49;
+
+    --color-dark-md-primary-fixed: #ACF2C8;
+    --color-dark-md-on-primary-fixed: #002112;
+    --color-dark-md-primary-fixed-dim: #91D5AD;
+    --color-dark-md-on-primary-fixed-variant: #045233;
+
+    --color-dark-md-secondary-fixed: #D0E8D7;
+    --color-dark-md-on-secondary-fixed: #0B1F15;
+    --color-dark-md-secondary-fixed-dim: #B5CCBB;
+    --color-dark-md-on-secondary-fixed-variant: #374B3E;
+
+    --color-dark-md-tertiary-fixed: #BFE9F9;
+    --color-dark-md-on-tertiary-fixed: #001F27;
+    --color-dark-md-tertiary-fixed-dim: #A4CDDC;
+    --color-dark-md-on-tertiary-fixed-variant: #224C59;
+
+    --color-dark-md-surface-dim: #0F1511;
+    --color-dark-md-surface-bright: #353B36;
+    --color-dark-md-surface-container-lowest: #0A0F0C;
+    --color-dark-md-surface-container-low: #171D19;
+    --color-dark-md-surface-container: #1B211D;
+    --color-dark-md-surface-container-high: #262B27;
+    --color-dark-md-surface-container-highest: #303632;
 }

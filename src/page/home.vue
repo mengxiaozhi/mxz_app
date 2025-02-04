@@ -1,5 +1,5 @@
 <script setup>
-    import { NImage } from 'naive-ui'
+    //import { NImage } from 'naive-ui'
     import ArticleList from '../components/ArticleList.vue'
 </script>
 <template>

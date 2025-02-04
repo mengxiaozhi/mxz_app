@@ -99,11 +99,11 @@
                 <div class="flex flex-col justify-between flex-grow">
                     <div>
                         <h2 class="text-lg font-semibold">
-                            <a :href="article.link" target="_blank" class="text-md-on-surface hover:underline">
+                            <router-link :to="`/reader?id=${article.id}`" class="text-md-on-surface dark:text-dark-md-on-surface hover:underline">
                                 {{ article.title }}
-                            </a>
+                            </router-link>
                         </h2>
-                        <p class="text-md-on-surface-variant">{{ article.excerpt }}</p>
+                        <p class="text-md-on-surface-variant dark:text-dark-md-on-surface-variant">{{ article.excerpt }}</p>
                     </div>
                     &nbsp;
                     <div>
@@ -118,14 +118,14 @@
                         </a>-->
                         <router-link :to="`/reader?id=${article.id}`">
                             <Button
-                                class="border-1 bg-md-primary/100 text-md-on-primary py-2 px-5 rounded-full hover:bg-md-primary/0 hover:text-md-primary hover:border-1 hover: border-md-primary">
+                                class="border-1 bg-md-primary/100 text-md-on-primary py-2 px-5 rounded-full hover:bg-md-primary/0 dark:bg-dark-md-primary/100 text-dark-md-on-primary hover:text-md-primary hover:border-1 hover: border-md-primary dark:hover:text-dark-md-primary">
                                 <n-icon class="pt-0.5 pr-5">
                                     <ArrowForward />
                                 </n-icon>
                                 閱讀更多
                             </Button>
                         </router-link>
-                        <Button class=" text-md-primary py-2 px-5" @click="addBookmark(article)">
+                        <Button class=" text-md-primary dark:text-dark-md-primary py-2 px-5" @click="addBookmark(article)">
                             加入書籤
                         </Button>
                     </div>
