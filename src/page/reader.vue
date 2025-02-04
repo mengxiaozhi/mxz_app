@@ -10,8 +10,10 @@
 
             <!-- Article Content -->
             <div class="px-4">
-                <h1 class="text-2xl font-bold mb-2 text-md-on-surface dark:text-dark-md-on-surface">{{ article?.title }}</h1>
-                <div class="flex justify-between items-center mb-4 text-sm text-md-on-surface dark:text-dark-md-on-surface">
+                <h1 class="text-2xl font-bold mb-2 text-md-on-surface dark:text-dark-md-on-surface">{{ article?.title }}
+                </h1>
+                <div
+                    class="flex justify-between items-center mb-4 text-sm text-md-on-surface dark:text-dark-md-on-surface">
                     <span>
                         {{ article?.author }} · {{ article?.date }}
                     </span>
@@ -20,7 +22,7 @@
                     </a>
                 </div>
                 <!-- Content Section -->
-                <div v-html="article?.content" class="content text-md-on-surface-variant dark:text-dark-md-on-surface-variant"></div>
+                <div v-html="article?.content" class="text-md-on-surface-variant dark:text-dark-md-on-surface-variant"></div>
                 <br>
                 <Button @click="handleShare"
                     class="border-1 bg-md-primary/100 text-md-on-primary py-2 px-5 rounded-full hover:bg-md-primary/0 dark:bg-dark-md-primary/100 text-dark-md-on-primary hover:text-md-primary hover:border-1 hover: border-md-primary dark:hover:text-dark-md-primary">
@@ -123,7 +125,4 @@
 </script>
 
 <style scoped>
-    .content {
-        color: aliceblue;
-    }
 </style>

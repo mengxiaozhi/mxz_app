@@ -1,18 +1,31 @@
 <script setup>
-    import { NConfigProvider, NMessageProvider } from 'naive-ui'
+    import { NConfigProvider, NMessageProvider, darkTheme } from 'naive-ui'
     import Nav from './components/Nav.vue'
     import Vue_Header from './components/Header.vue'
 
     const lightThemeOverrides = {
         common: {
-            primaryColor: '#276A49',
-            primaryColorHover: '#156C46',   // 可對應 palette.primary.40
-            primaryColorPressed: '#045233', // 可對應 palette.primary.30
-            primaryColorSuppl: '#ACF2C8',   // primaryContainer
-            infoColor: '#3C6471',          // 這裡可以用作 tertiary，也可自行調整
-            errorColor: '#BA1A1A',
-            bodyColor: '#F6FBF4',     // background、surface
-            textColorBase: '#171D19', // onBackground、onSurface
+            primaryColor: '#276A49',            // 主色
+            primaryColorHover: '#156C46',       // 主色 hover
+            primaryColorPressed: '#045233',     // 主色 pressed
+            primaryColorSuppl: '#ACF2C8',       // 主色补充色
+            infoColor: '#3C6471',               // 信息色
+            errorColor: '#BA1A1A',              // 错误色
+            bodyColor: '#F6FBF4',               // 背景色
+            textColorBase: '#171D19',           // 基本文本颜色
+        }
+    }
+
+    const darkThemeOverrides = {
+        common: {
+            primaryColor: '#91D5AD',            // 主色
+            primaryColorHover: '#4F7F65',       // 主色 hover
+            primaryColorPressed: '#045233',     // 主色 pressed
+            primaryColorSuppl: '#ACF2C8',       // 主色补充色
+            infoColor: '#A4CDDC',               // 信息色
+            errorColor: '#FFB4AB',              // 错误色
+            bodyColor: '#0F1511',               // 背景色
+            textColorBase: '#DFE4DD',           // 基本文本颜色
         }
     }
 </script>
