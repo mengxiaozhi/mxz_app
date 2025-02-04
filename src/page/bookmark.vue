@@ -38,7 +38,7 @@
     <div class="p-4 space-y-4">
         <!-- 如果沒有任何書籤，顯示提示訊息 -->
         <div v-if="bookmarks.length === 0">
-            <p>目前還沒有任何書籤！</p>
+            <p class="text-md-primary dark:text-dark-md-primary">目前還沒有任何書籤！</p>
         </div>
 
         <!-- 有書籤時，逐項顯示 -->

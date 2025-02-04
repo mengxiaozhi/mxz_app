@@ -21,7 +21,7 @@
                 </div>
                 <!-- Content Section -->
                 <div v-html="article?.content" class="content text-md-on-surface-variant dark:text-dark-md-on-surface-variant"></div>
-
+                <br>
                 <Button @click="handleShare"
                     class="border-1 bg-md-primary/100 text-md-on-primary py-2 px-5 rounded-full hover:bg-md-primary/0 dark:bg-dark-md-primary/100 text-dark-md-on-primary hover:text-md-primary hover:border-1 hover: border-md-primary dark:hover:text-dark-md-primary">
                     <n-icon class="pt-0.5 pr-5">
