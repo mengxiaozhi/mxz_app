@@ -1,6 +1,6 @@
 <script setup>
     import { ref, onMounted } from 'vue';
-    import { NSpin, NIcon, NDivider } from "naive-ui";
+    import { NSpin, NIcon, NDivider, NSkeleton } from "naive-ui";
     import { ArrowForward } from '@vicons/ionicons5';
 
     const loading = ref(true);
@@ -37,12 +37,6 @@
                 </a>
                 <n-divider />
             </div>
-        </div>
-        <div class="text-md-on-surface-variant dark:text-dark-md-on-surface-variant">
-            <p>
-                Copyright © 萌小志Mengxiaozhi & Moexiaozhi.<br>
-                版本：0.1
-            </p>
         </div>
     </NSpin>
 </template>

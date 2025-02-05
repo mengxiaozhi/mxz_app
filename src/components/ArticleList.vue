@@ -1,6 +1,6 @@
 <script setup>
     import { ref, onMounted, watch } from "vue";
-    import {  NSpin, useMessage, NIcon, NPagination, NDivider } from "naive-ui";
+    import { NSpin, useMessage, NIcon, NPagination, NDivider, NEllipsis } from "naive-ui";
     import { ArrowForward } from '@vicons/ionicons5'
 
     const articles = ref([]);
@@ -99,11 +99,17 @@
                 <div class="flex flex-col justify-between flex-grow">
                     <div>
                         <h2 class="text-lg font-semibold">
-                            <router-link :to="`/reader?id=${article.id}`" class="text-md-on-surface dark:text-dark-md-on-surface hover:underline">
-                                {{ article.title }}
+                            <router-link :to="`/reader?id=${article.id}`"
+                                class="text-md-on-surface dark:text-dark-md-on-surface hover:underline">
+                                <n-ellipsis :line-clamp="1">
+                                    {{ article.title }}
+                                </n-ellipsis>
                             </router-link>
                         </h2>
-                        <p class="text-md-on-surface-variant dark:text-dark-md-on-surface-variant">{{ article.excerpt }}</p>
+                        <n-ellipsis :line-clamp="3"
+                            class="text-md-on-surface-variant dark:text-dark-md-on-surface-variant">{{ article.excerpt
+                            }}</n-ellipsis>
+                        <!--<p class="text-md-on-surface-variant dark:text-dark-md-on-surface-variant">{{ article.excerpt }}</p>-->
                     </div>
                     &nbsp;
                     <div>
@@ -125,7 +131,8 @@
                                 閱讀更多
                             </Button>
                         </router-link>
-                        <Button class=" text-md-primary dark:text-dark-md-primary py-2 px-5" @click="addBookmark(article)">
+                        <Button class=" text-md-primary dark:text-dark-md-primary py-2 px-5"
+                            @click="addBookmark(article)">
                             加入書籤
                         </Button>
                     </div>

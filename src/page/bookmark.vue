@@ -1,7 +1,7 @@
 <!-- BookmarksPage.vue -->
 <script setup>
     import { ref, onMounted } from 'vue'
-    import { useMessage, NDivider, NIcon } from 'naive-ui'
+    import { useMessage, NDivider, NIcon, NEllipsis } from 'naive-ui'
     import { ArrowForward } from '@vicons/ionicons5'
 
     const message = useMessage()
@@ -48,11 +48,16 @@
                     <div class="flex flex-col justify-between flex-grow">
                         <div>
                             <h2 class="text-lg font-semibold">
-                                <router-link :to="`/reader?id=${bookmark.id}`" class="text-md-on-surface dark:text-dark-md-on-surface-variant hover:underline">
-                                {{ bookmark.title }}
-                            </router-link>
+                                <router-link :to="`/reader?id=${bookmark.id}`"
+                                    class="text-md-on-surface dark:text-dark-md-on-surface-variant hover:underline">
+                                    <n-ellipsis :line-clamp="1">
+                                        {{ bookmark.title }}
+                                    </n-ellipsis>
+                                </router-link>
                             </h2>
-                            <p class="text-md-on-surface-variant dark:text-dark-md-on-surface-variant">{{ bookmark.excerpt }}</p>
+                            <n-ellipsis :line-clamp="3"
+                                class="text-md-on-surface-variant dark:text-dark-md-on-surface-variant">{{
+                                    bookmark.excerpt }}</n-ellipsis>
                         </div>
                         &nbsp;
                         <div>
@@ -74,7 +79,8 @@
                                     閱讀更多
                                 </Button>
                             </router-link>
-                            <Button class=" text-md-primary dark:text-dark-md-primary py-2 px-5" @click="removeBookmark(bookmark.id)">
+                            <Button class=" text-md-primary dark:text-dark-md-primary py-2 px-5"
+                                @click="removeBookmark(bookmark.id)">
                                 移除書籤
                             </Button>
                         </div>

@@ -2,27 +2,32 @@
     <NSpin :show="loading">
         <div class="pb-20">
             <!-- Image Section -->
-            <div class="relative h-64 mb-4 px-3">
-                <img v-if="article?.imageUrl" :src="article.imageUrl" :alt="article.title"
+            <n-skeleton v-if="loading" height="270px"/>
+            <div v-else class="relative h-64 mb-4 px-3">
+                <img :src="article.imageUrl" :alt="article.title"
                     class="object-cover w-full h-full" />
-                <img v-else src="/logo.png" alt="Placeholder" class="object-cover w-full h-full" />
             </div>
-
+            <br>
             <!-- Article Content -->
             <div class="px-4">
-                <h1 class="text-2xl font-bold mb-2 text-md-on-surface dark:text-dark-md-on-surface">{{ article?.title }}
+                <n-skeleton v-if="loading" text style="width: 70%" height="30px"/>
+                <h1 v-else class="text-2xl font-bold mb-2 text-md-on-surface dark:text-dark-md-on-surface">{{ article?.title }}
                 </h1>
                 <div
                     class="flex justify-between items-center mb-4 text-sm text-md-on-surface dark:text-dark-md-on-surface">
-                    <span>
+                    <n-skeleton v-if="loading" text style="width: 50%" />
+                    <span v-else>
                         {{ article?.author }} · {{ article?.date }}
                     </span>
-                    <a :href="article?.link" class=" text-md-primary dark:text-dark-md-primary py-2 px-5xs">
+                    <n-skeleton v-if="loading" text style="width: 70px" />
+                    <a v-else :href="article?.link" class=" text-md-primary dark:text-dark-md-primary py-2 px-5xs">
                         原始頁面
                     </a>
                 </div>
                 <!-- Content Section -->
-                <div v-html="article?.content" class="text-md-on-surface-variant dark:text-dark-md-on-surface-variant"></div>
+                <n-skeleton v-if="loading" text :repeat="30" />
+                <div v-html="article?.content" v-else class="text-md-on-surface-variant dark:text-dark-md-on-surface-variant">
+                </div>
                 <br>
                 <Button @click="handleShare"
                     class="border-1 bg-md-primary/100 text-md-on-primary py-2 px-5 rounded-full hover:bg-md-primary/0 dark:bg-dark-md-primary/100 text-dark-md-on-primary hover:text-md-primary hover:border-1 hover: border-md-primary dark:hover:text-dark-md-primary">
@@ -39,7 +44,7 @@
 <script>
     import { ref, computed, onMounted } from "vue"
     import { useRoute } from "vue-router"
-    import { NButton, NIcon, NSpin } from "naive-ui"
+    import { NButton, NIcon, NSpin, NSkeleton } from "naive-ui"
     import { ShareOutline } from '@vicons/ionicons5'
 
 
@@ -49,6 +54,7 @@
             NIcon,
             NSpin,
             ShareOutline,
+            NSkeleton
         },
         setup() {
             const article = ref(null)
@@ -124,5 +130,4 @@
     }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
