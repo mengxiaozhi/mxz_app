@@ -2,6 +2,7 @@
     import { ref, onMounted, watch } from "vue";
     import { NSpin, useMessage, NIcon, NPagination, NDivider, NEllipsis } from "naive-ui";
     import { ArrowForward } from '@vicons/ionicons5'
+    import config from '../config.js';
 
     const articles = ref([]);
     const loading = ref(true);
@@ -42,7 +43,7 @@
     const fetchArticles = async () => {
         try {
             const response = await fetch(
-                `https://xiaozhi.moe/wp-json/wp/v2/posts?per_page=${perPage}&page=${currentPage.value}`
+                `${config.apiUrl}/wp-json/wp/v2/posts?per_page=${perPage}&page=${currentPage.value}`
             );
             const posts = await response.json();
 
@@ -51,7 +52,7 @@
                 posts.map(async (post) => {
                     let imageUrl = "/placeholder.svg";
                     if (post.featured_media) {
-                        const mediaResponse = await fetch(`https://xiaozhi.moe/wp-json/wp/v2/media/${post.featured_media}`);
+                        const mediaResponse = await fetch(`${config.apiUrl}/wp-json/wp/v2/media/${post.featured_media}`);
                         const mediaData = await mediaResponse.json();
                         imageUrl = mediaData.source_url || "/placeholder.svg";
                     }
@@ -75,7 +76,7 @@
                 totalPages.value = 1;
             }
         } catch (error) {
-            message.error("無法載入文章");
+            message.error("無法載入文章"+error);
             console.error(error);
         } finally {
             loading.value = false;

@@ -46,6 +46,7 @@
     import { useRoute } from "vue-router"
     import { NButton, NIcon, NSpin, NSkeleton } from "naive-ui"
     import { ShareOutline } from '@vicons/ionicons5'
+    import config from '../config.js';
 
 
     export default {
@@ -65,7 +66,7 @@
             // Fetch article from WordPress REST API
             const fetchArticle = async () => {
                 try {
-                    const response = await fetch(`https://xiaozhi.moe/wp-json/wp/v2/posts/${id}?_embed`)
+                    const response = await fetch(`${config.apiUrl}/wp-json/wp/v2/posts/${id}?_embed`)
                     const data = await response.json()
 
                     article.value = {

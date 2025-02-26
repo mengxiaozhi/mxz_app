@@ -2,13 +2,14 @@
     import { ref, onMounted } from 'vue';
     import { NSpin, NIcon, NDivider, NSkeleton } from "naive-ui";
     import { ArrowForward } from '@vicons/ionicons5';
+    import config from '../config.js';
 
     const loading = ref(true);
     const pages = ref([]); // 用于存储页面数据
 
     onMounted(async () => {
         try {
-            const response = await fetch('https://xiaozhi.moe/wp-json/wp/v2/pages');
+            const response = await fetch(`${config.apiUrl}/wp-json/wp/v2/pages`);
             // 检查响应状态
             if (!response.ok) {
                 throw new Error(`网络响应错误: ${response.status}`);
