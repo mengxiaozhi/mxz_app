@@ -50,4 +50,35 @@
         box-shadow: inset 0 -0.6em rgb(255 255 000 / 80%);
         padding: 0 0.1em;
     }
+
+    .article-content img {
+        min-height: 270px;
+        min-width: 100%;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        border-radius: 7px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center;
+        cursor: pointer;
+    }
+    .article-content p {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .article-content div{
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+
+    .article-content code{
+        background-color: rgb(19, 19, 19);
+        color:white;
+        padding-left: 7px;
+        padding-right: 7px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 5px;
+    }
 </style>
