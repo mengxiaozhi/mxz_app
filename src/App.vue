@@ -32,7 +32,7 @@
         }
     }
 
-    //const requestNotification = () => {
+    if ('Notification' in window && 'serviceWorker' in navigator) {
         Notification.requestPermission()
             .then((permission) => {
                 if (permission === 'granted') {
@@ -51,16 +51,16 @@
             .catch((err) => {
                 console.error('無法取得通知權限或獲取 token:', err)
             })
-    //}
+    }
 
     onMessage(messaging, (payload) => {
         console.log('前台接收到訊息:', payload)
         // 若 payload.notification 存在，手動顯示通知
         //if (payload.notification) {
-            //new Notification(payload.notification.title, {
-               //body: payload.notification.body,
-                //icon: payload.notification.icon || '/your-icon.png'
-            //})
+        //new Notification(payload.notification.title, {
+        //body: payload.notification.body,
+        //icon: payload.notification.icon || '/your-icon.png'
+        //})
         //}
     })
 </script>
